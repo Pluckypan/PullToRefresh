@@ -11,6 +11,7 @@
     tools:context="engineer.echo.eerefreshdemo.MainActivity">
 
     <TextView
+        android:id="@+id/tvRecyclerView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_main_button"

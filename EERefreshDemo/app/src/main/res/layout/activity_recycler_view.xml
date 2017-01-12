@@ -8,6 +8,7 @@
 
     <engineer.echo.pulltorefresh.library.PullToRefreshRecycleView
         android:id="@+id/pullToRefreshRecycleView"
+        style="@style/FHRefreshStyle"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="FHRefreshStyle">
+        <item name="ptrDrawableStart">@drawable/icon_refresh_arrow</item>
+        <item name="ptrDrawableEnd">@drawable/icon_refresh</item>
+        <item name="ptrProgressIndeterminateDrawable">@drawable/fhrefreshprogress</item>
+        <item name="ptrShowRefreshTips">false</item>
+        <item name="ptrAnimationStyle">flip</item>
+    </style>
+
 </resources>
