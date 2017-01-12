@@ -41,7 +41,6 @@ import engineer.echo.pulltorefresh.library.PullToRefreshBase.Mode;
 import engineer.echo.pulltorefresh.library.PullToRefreshBase.Orientation;
 import engineer.echo.pulltorefresh.library.R;
 
-@SuppressLint("ViewConstructor")
 public abstract class LoadingLayout extends FrameLayout implements ILoadingLayout {
 
     static final Interpolator ANIMATION_INTERPOLATOR = new LinearInterpolator();
@@ -91,14 +90,13 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
 
         /**
          * Added By Plucky  2016-05-31 15:20
-         * 可添加刷新头部图片
-         * 控制提示文字是否显示
+         * add a picture above refreshView
          */
         ivRefreshTop = (ImageView) findViewById(R.id.ivRefreshTop);
         LRefreshTips = (LinearLayout) findViewById(R.id.LRefreshTips);
 
         /**
-         * 第一步:设置刷新控件头部的图片
+         * set picture
          */
         if (attrs.hasValue(R.styleable.PullToRefresh_ptrRefreshTop) && mode == Mode.PULL_FROM_START) {
             Drawable refreshTop = attrs.getDrawable(R.styleable.PullToRefresh_ptrRefreshTop);
@@ -107,7 +105,7 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
             }
         }
         /**
-         * 第二步：控制提示文字显示不显示
+         * set if show refreshTips
          */
         if (attrs.hasValue(R.styleable.PullToRefresh_ptrShowRefreshTips) && mode == Mode.PULL_FROM_START) {
             boolean isShow = attrs.getBoolean(R.styleable.PullToRefresh_ptrShowRefreshTips, true);
@@ -385,10 +383,6 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
             mSubHeaderText.setVisibility(View.VISIBLE);
         }
     }
-
-    /**
-     * Callbacks for derivative Layouts
-     */
 
     protected abstract int getDefaultDrawableResId();
 

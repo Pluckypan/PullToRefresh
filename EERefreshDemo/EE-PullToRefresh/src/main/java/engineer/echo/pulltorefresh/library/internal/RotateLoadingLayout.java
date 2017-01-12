@@ -22,11 +22,9 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView.ScaleType;
-
 import engineer.echo.pulltorefresh.library.PullToRefreshBase.Mode;
 import engineer.echo.pulltorefresh.library.PullToRefreshBase.Orientation;
 import engineer.echo.pulltorefresh.library.R;
-
 public class RotateLoadingLayout extends LoadingLayout {
 
 	static final int ROTATION_ANIMATION_DURATION = 1200;

@@ -15,7 +15,6 @@
  *******************************************************************************/
 package engineer.echo.pulltorefresh.library.internal;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
@@ -33,7 +32,7 @@ import android.widget.ImageView.ScaleType;
 import engineer.echo.pulltorefresh.library.PullToRefreshBase;
 import engineer.echo.pulltorefresh.library.R;
 
-@SuppressLint("ViewConstructor")
+
 public class IndicatorLayout extends FrameLayout implements AnimationListener {
 
     static final int DEFAULT_ROTATION_ANIMATION_DURATION = 150;

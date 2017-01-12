@@ -31,11 +31,11 @@ public final class OverscrollHelper {
 	/**
 	 * Helper method for Overscrolling that encapsulates all of the necessary
 	 * function.
-	 * <p/>
+	 * <p>
 	 * This should only be used on AdapterView's such as ListView as it just
 	 * calls through to overScrollBy() with the scrollRange = 0. AdapterView's
 	 * do not have a scroll range (i.e. getScrollY() doesn't work).
-	 * 
+	 * </p>
 	 * @param view - PullToRefreshView that is calling this.
 	 * @param deltaX - Change in X in pixels, passed through from from
 	 *            overScrollBy call

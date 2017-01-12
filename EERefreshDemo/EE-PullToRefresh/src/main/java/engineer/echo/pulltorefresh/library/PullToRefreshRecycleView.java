@@ -116,9 +116,9 @@ public class PullToRefreshRecycleView extends PullToRefreshBase<RecyclerView> {
     }
 
     /**
-     * 加载数据完成之后 往上再偏移一点
+     * scrollBy when loadmore complete
      */
-    public void onAppendData(){
+    public void onAppendData() {
         getRefreshableView().scrollBy(0, 100);
     }
 }

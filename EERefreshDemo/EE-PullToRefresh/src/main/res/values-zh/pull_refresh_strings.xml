@@ -7,4 +7,6 @@
     <string name="pull_to_refresh_from_bottom_pull_label">上拉加载…</string>
     <string name="pull_to_refresh_from_bottom_release_label">放开以加载…</string>
     <string name="pull_to_refresh_from_bottom_refreshing_label">正在载入…</string>
+
+    <string name="pull_to_refresh_pull_status_nomore">没有更多了</string>
 </resources>

@@ -85,16 +85,6 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
 		mRefreshableView.setOnScrollListener(this);
 	}
 
-	/**
-	 * Gets whether an indicator graphic should be displayed when the View is in
-	 * a state where a Pull-to-Refresh can happen. An example of this state is
-	 * when the Adapter View is scrolled to the top and the mode is set to
-	 * {@link Mode#PULL_FROM_START}. The default value is <var>true</var> if
-	 * {@link PullToRefreshBase#isPullToRefreshOverScrollEnabled()
-	 * isPullToRefreshOverScrollEnabled()} returns false.
-	 * 
-	 * @return true if the indicators will be shown
-	 */
 	public boolean getShowIndicator() {
 		return mShowIndicator;
 	}
@@ -140,31 +130,10 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
 		}
 	}
 
-	/**
-	 * Pass-through method for {@link PullToRefreshBase#getRefreshableView()
-	 * getRefreshableView()}.
-	 * {@link AdapterView#setAdapter(android.widget.Adapter)}
-	 * setAdapter(adapter)}. This is just for convenience!
-	 * 
-	 * @param adapter - Adapter to set
-	 */
 	public void setAdapter(ListAdapter adapter) {
 		mRefreshableView.setAdapter(adapter);
 	}
 
-	/**
-	 * Sets the Empty View to be used by the Adapter View.
-	 * <p/>
-	 * We need it handle it ourselves so that we can Pull-to-Refresh when the
-	 * Empty View is shown.
-	 * <p/>
-	 * Please note, you do <strong>not</strong> usually need to call this method
-	 * yourself. Calling setEmptyView on the AdapterView will automatically call
-	 * this method and set everything up. This includes when the Android
-	 * Framework automatically sets the Empty View based on it's ID.
-	 * 
-	 * @param newEmptyView - Empty View to be used
-	 */
 	public final void setEmptyView(View newEmptyView) {
 		FrameLayout refreshableViewWrapper = getRefreshableViewWrapper();
 
@@ -196,14 +165,6 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
 		mEmptyView = newEmptyView;
 	}
 
-	/**
-	 * Pass-through method for {@link PullToRefreshBase#getRefreshableView()
-	 * getRefreshableView()}.
-	 * {@link AdapterView#setOnItemClickListener(OnItemClickListener)
-	 * setOnItemClickListener(listener)}. This is just for convenience!
-	 * 
-	 * @param listener - OnItemClickListener to use
-	 */
 	public void setOnItemClickListener(OnItemClickListener listener) {
 		mRefreshableView.setOnItemClickListener(listener);
 	}
@@ -220,14 +181,6 @@ public abstract class PullToRefreshAdapterViewBase<T extends AbsListView> extend
 		mScrollEmptyView = doScroll;
 	}
 
-	/**
-	 * Sets whether an indicator graphic should be displayed when the View is in
-	 * a state where a Pull-to-Refresh can happen. An example of this state is
-	 * when the Adapter View is scrolled to the top and the mode is set to
-	 * {@link Mode#PULL_FROM_START}
-	 * 
-	 * @param showIndicator - true if the indicators should be shown.
-	 */
 	public void setShowIndicator(boolean showIndicator) {
 		mShowIndicator = showIndicator;
 
