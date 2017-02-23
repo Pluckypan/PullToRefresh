@@ -28,6 +28,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':EE-PullToRefresh')
     compile 'org.xutils:xutils:3.3.40'
+    //刷新控件
+    compile 'engineer.echo.pulltorefresh.library:EE-PullToRefresh:1.0.0'
     //RecyclerView分区扩展控件
     compile 'com.truizlop.sectionedrecyclerview:library:1.1.0'
 }
