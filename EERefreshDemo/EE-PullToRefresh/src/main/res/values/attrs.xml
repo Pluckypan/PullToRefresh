@@ -15,6 +15,12 @@
         <!-- Text Color of the Header and Footer Loading Views Sub Header -->
         <attr name="ptrHeaderSubTextColor" format="reference|color" />
 
+        <!-- Text Color of the Header and Footer Loading Views -->
+        <attr name="ptrFooterTextColor" format="reference|color" />
+
+        <!-- Text Color of the Header and Footer Loading Views Sub Header -->
+        <attr name="ptrFooterSubTextColor" format="reference|color" />
+
         <!-- Mode of Pull-to-Refresh that should be used -->
         <attr name="ptrMode">
             <flag name="disabled" value="0x0" />
@@ -48,6 +54,12 @@
 
         <!-- Base text color, typeface, size, and style for Header and Footer Loading Views Sub Header -->
         <attr name="ptrSubHeaderTextAppearance" format="reference" />
+
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views -->
+        <attr name="ptrFooterTextAppearance" format="reference" />
+
+        <!-- Base text color, typeface, size, and style for Header and Footer Loading Views Sub Header -->
+        <attr name="ptrSubFooterTextAppearance" format="reference" />
 
         <!-- Style of Animation should be used displayed when pulling. -->
         <attr name="ptrAnimationStyle">

@@ -162,26 +162,31 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
             }
         }
 
-        if (attrs.hasValue(R.styleable.PullToRefresh_ptrHeaderTextAppearance)) {
+        int textAppea=mode==Mode.PULL_FROM_START?R.styleable.PullToRefresh_ptrHeaderTextAppearance:R.styleable.PullToRefresh_ptrFooterTextAppearance;
+        int textAppeaSub=mode==Mode.PULL_FROM_START?R.styleable.PullToRefresh_ptrSubHeaderTextAppearance:R.styleable.PullToRefresh_ptrSubFooterTextAppearance;
+
+        if (attrs.hasValue(textAppea)) {
             TypedValue styleID = new TypedValue();
-            attrs.getValue(R.styleable.PullToRefresh_ptrHeaderTextAppearance, styleID);
+            attrs.getValue(textAppea, styleID);
             setTextAppearance(styleID.data);
         }
-        if (attrs.hasValue(R.styleable.PullToRefresh_ptrSubHeaderTextAppearance)) {
+        if (attrs.hasValue(textAppeaSub)) {
             TypedValue styleID = new TypedValue();
-            attrs.getValue(R.styleable.PullToRefresh_ptrSubHeaderTextAppearance, styleID);
+            attrs.getValue(textAppeaSub, styleID);
             setSubTextAppearance(styleID.data);
         }
 
+        int txtColor=mode==Mode.PULL_FROM_START?R.styleable.PullToRefresh_ptrHeaderTextColor:R.styleable.PullToRefresh_ptrFooterTextColor;
+        int txtColorSub=mode==Mode.PULL_FROM_START?R.styleable.PullToRefresh_ptrHeaderSubTextColor:R.styleable.PullToRefresh_ptrFooterSubTextColor;
         // Text Color attrs need to be set after TextAppearance attrs
-        if (attrs.hasValue(R.styleable.PullToRefresh_ptrHeaderTextColor)) {
-            ColorStateList colors = attrs.getColorStateList(R.styleable.PullToRefresh_ptrHeaderTextColor);
+        if (attrs.hasValue(txtColor)) {
+            ColorStateList colors = attrs.getColorStateList(txtColor);
             if (null != colors) {
                 setTextColor(colors);
             }
         }
-        if (attrs.hasValue(R.styleable.PullToRefresh_ptrHeaderSubTextColor)) {
-            ColorStateList colors = attrs.getColorStateList(R.styleable.PullToRefresh_ptrHeaderSubTextColor);
+        if (attrs.hasValue(txtColorSub)) {
+            ColorStateList colors = attrs.getColorStateList(txtColorSub);
             if (null != colors) {
                 setSubTextColor(colors);
             }
