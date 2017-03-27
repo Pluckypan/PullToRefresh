@@ -15,7 +15,6 @@
  *******************************************************************************/
 package engineer.echo.pulltorefresh.library.internal;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -137,21 +136,61 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
                 lp.gravity = scrollDirection == Orientation.VERTICAL ? Gravity.TOP : Gravity.LEFT;
 
                 // Load in labels
-                mPullLabel = context.getString(R.string.pull_to_refresh_from_bottom_pull_label);
-                mRefreshingLabel = context.getString(R.string.pull_to_refresh_from_bottom_refreshing_label);
-                mReleaseLabel = context.getString(R.string.pull_to_refresh_from_bottom_release_label);
-                defaultPullLabel = context.getString(R.string.pull_to_refresh_from_bottom_pull_label);
+
+                if (attrs.hasValue(R.styleable.PullToRefresh_ptrFooterPullLable)) {
+                    mPullLabel = attrs.getString(R.styleable.PullToRefresh_ptrFooterPullLable);
+                } else {
+                    mPullLabel = context.getString(R.string.pull_to_refresh_from_bottom_pull_label);
+                }
+
+                if (attrs.hasValue(R.styleable.PullToRefresh_ptrFooterLoadingLable)) {
+                    mRefreshingLabel = attrs.getString(R.styleable.PullToRefresh_ptrFooterLoadingLable);
+                } else {
+                    mRefreshingLabel = context.getString(R.string.pull_to_refresh_from_bottom_refreshing_label);
+                }
+
+                if (attrs.hasValue(R.styleable.PullToRefresh_ptrFooterReleaseLable)) {
+                    mReleaseLabel = attrs.getString(R.styleable.PullToRefresh_ptrFooterReleaseLable);
+                } else {
+                    mReleaseLabel = context.getString(R.string.pull_to_refresh_from_bottom_release_label);
+                }
+
+                if (attrs.hasValue(R.styleable.PullToRefresh_ptrFooterDefaultLable)) {
+                    defaultPullLabel = attrs.getString(R.styleable.PullToRefresh_ptrFooterDefaultLable);
+                } else {
+                    defaultPullLabel = context.getString(R.string.pull_to_refresh_from_bottom_pull_label);
+                }
+
                 break;
 
             case PULL_FROM_START:
             default:
                 lp.gravity = scrollDirection == Orientation.VERTICAL ? Gravity.BOTTOM : Gravity.RIGHT;
 
-                // Load in labels
-                mPullLabel = context.getString(R.string.pull_to_refresh_pull_label);
-                mRefreshingLabel = context.getString(R.string.pull_to_refresh_refreshing_label);
-                mReleaseLabel = context.getString(R.string.pull_to_refresh_release_label);
-                defaultPullLabel = context.getString(R.string.pull_to_refresh_pull_label);
+                if (attrs.hasValue(R.styleable.PullToRefresh_ptrHeaderPullLable)) {
+                    mPullLabel = attrs.getString(R.styleable.PullToRefresh_ptrHeaderPullLable);
+                } else {
+                    mPullLabel = context.getString(R.string.pull_to_refresh_pull_label);
+                }
+
+                if (attrs.hasValue(R.styleable.PullToRefresh_ptrHeaderLoadingLable)) {
+                    mRefreshingLabel = attrs.getString(R.styleable.PullToRefresh_ptrHeaderLoadingLable);
+                } else {
+                    mRefreshingLabel = context.getString(R.string.pull_to_refresh_refreshing_label);
+                }
+
+                if (attrs.hasValue(R.styleable.PullToRefresh_ptrHeaderReleaseLable)) {
+                    mReleaseLabel = attrs.getString(R.styleable.PullToRefresh_ptrHeaderReleaseLable);
+                } else {
+                    mReleaseLabel = context.getString(R.string.pull_to_refresh_release_label);
+                }
+
+                if (attrs.hasValue(R.styleable.PullToRefresh_ptrHeaderDefaultLable)) {
+                    defaultPullLabel = attrs.getString(R.styleable.PullToRefresh_ptrHeaderDefaultLable);
+                } else {
+                    defaultPullLabel = context.getString(R.string.pull_to_refresh_pull_label);
+                }
+
                 break;
         }
 
@@ -162,8 +201,8 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
             }
         }
 
-        int textAppea=mode==Mode.PULL_FROM_START?R.styleable.PullToRefresh_ptrHeaderTextAppearance:R.styleable.PullToRefresh_ptrFooterTextAppearance;
-        int textAppeaSub=mode==Mode.PULL_FROM_START?R.styleable.PullToRefresh_ptrSubHeaderTextAppearance:R.styleable.PullToRefresh_ptrSubFooterTextAppearance;
+        int textAppea = mode == Mode.PULL_FROM_START ? R.styleable.PullToRefresh_ptrHeaderTextAppearance : R.styleable.PullToRefresh_ptrFooterTextAppearance;
+        int textAppeaSub = mode == Mode.PULL_FROM_START ? R.styleable.PullToRefresh_ptrSubHeaderTextAppearance : R.styleable.PullToRefresh_ptrSubFooterTextAppearance;
 
         if (attrs.hasValue(textAppea)) {
             TypedValue styleID = new TypedValue();
@@ -176,8 +215,8 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
             setSubTextAppearance(styleID.data);
         }
 
-        int txtColor=mode==Mode.PULL_FROM_START?R.styleable.PullToRefresh_ptrHeaderTextColor:R.styleable.PullToRefresh_ptrFooterTextColor;
-        int txtColorSub=mode==Mode.PULL_FROM_START?R.styleable.PullToRefresh_ptrHeaderSubTextColor:R.styleable.PullToRefresh_ptrFooterSubTextColor;
+        int txtColor = mode == Mode.PULL_FROM_START ? R.styleable.PullToRefresh_ptrHeaderTextColor : R.styleable.PullToRefresh_ptrFooterTextColor;
+        int txtColorSub = mode == Mode.PULL_FROM_START ? R.styleable.PullToRefresh_ptrHeaderSubTextColor : R.styleable.PullToRefresh_ptrFooterSubTextColor;
         // Text Color attrs need to be set after TextAppearance attrs
         if (attrs.hasValue(txtColor)) {
             ColorStateList colors = attrs.getColorStateList(txtColor);

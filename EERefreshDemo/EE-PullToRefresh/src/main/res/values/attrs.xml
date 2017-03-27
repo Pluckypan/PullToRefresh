@@ -93,6 +93,17 @@
         <attr name="ptrShowRefreshTips" format="reference|boolean" />
         <attr name="ptrShowLoadMoreTips" format="reference|boolean" />
         <attr name="ptrProgressIndeterminateDrawable" format="reference" />
+
+        <attr name="ptrHeaderPullLable" format="reference|string" />
+        <attr name="ptrHeaderLoadingLable" format="reference|string" />
+        <attr name="ptrHeaderReleaseLable" format="reference|string" />
+        <attr name="ptrHeaderDefaultLable" format="reference|string" />
+
+        <attr name="ptrFooterPullLable" format="reference|string" />
+        <attr name="ptrFooterLoadingLable" format="reference|string" />
+        <attr name="ptrFooterReleaseLable" format="reference|string" />
+        <attr name="ptrFooterDefaultLable" format="reference|string" />
+
     </declare-styleable>
 
 </resources>

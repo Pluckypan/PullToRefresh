@@ -2,8 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-def vercode = 2
-def vername = "1.0.1"
+def vercode = 3
+def vername = "1.0.2"
 
 android {
     compileSdkVersion 22
