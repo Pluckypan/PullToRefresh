@@ -8,6 +8,7 @@
 
         <!-- A drawable to use as the background of the Header and Footer Loading Views -->
         <attr name="ptrHeaderBackground" format="reference|color" />
+        <attr name="ptrFooterBackground" format="reference|color" />
 
         <!-- Text Color of the Header and Footer Loading Views -->
         <attr name="ptrHeaderTextColor" format="reference|color" />

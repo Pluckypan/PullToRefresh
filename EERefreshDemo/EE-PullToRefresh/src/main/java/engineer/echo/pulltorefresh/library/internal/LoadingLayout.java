@@ -194,8 +194,10 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
                 break;
         }
 
-        if (attrs.hasValue(R.styleable.PullToRefresh_ptrHeaderBackground)) {
-            Drawable background = attrs.getDrawable(R.styleable.PullToRefresh_ptrHeaderBackground);
+        int bgStyle=mode==Mode.PULL_FROM_START?R.styleable.PullToRefresh_ptrHeaderBackground:R.styleable.PullToRefresh_ptrFooterBackground;
+
+        if (attrs.hasValue(bgStyle)) {
+            Drawable background = attrs.getDrawable(bgStyle);
             if (null != background) {
                 ViewCompat.setBackground(this, background);
             }
